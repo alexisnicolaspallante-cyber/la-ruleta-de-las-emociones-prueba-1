@@ -1,0 +1,19 @@
+dachshund-emotion-wheel/
+├── components/
+│   ├── EmotionWheel.js
+│   └── EmotionResult.js
+├── pages/
+│   ├── index.js
+│   ├── api/
+│   │   └── emotions.js
+│   └── _app.js
+├── styles/
+│   ├── globals.css
+│   └── EmotionWheel.module.css
+├── public/
+│   ├── images/
+│   │   └── emotions/
+│   └── sounds/
+├── data/
+│   └── emotions.js
+└── package.json

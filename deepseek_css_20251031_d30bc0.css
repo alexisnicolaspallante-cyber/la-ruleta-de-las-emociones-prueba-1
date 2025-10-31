@@ -1,0 +1,219 @@
+.wheelContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.wheel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.spinning {
+  animation: wheelSpin 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.segment {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform-origin: 100% 100%;
+  overflow: hidden;
+  border: 2px solid white;
+}
+
+.segmentContent {
+  position: absolute;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  text-align: center;
+  padding-top: 20px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.emotionName {
+  font-size: 12px;
+  display: block;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  border: 4px solid #333;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.indicator {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 30px solid #FF6B6B;
+  z-index: 20;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Result Styles */
+.resultContainer {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.resultCard {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.resultCard h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.emotionDisplay {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.emotionImage {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.emotionInfo {
+  text-align: left;
+}
+
+.emotionInfo h3 {
+  color: #667eea;
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.emotionInfo p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.advice {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #FFD700;
+  font-style: italic;
+}
+
+.memeButton, .downloadButton {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Comic Neue', cursive;
+  font-weight: bold;
+  margin: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.memeButton:hover, .downloadButton:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+}
+
+.memeContainer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px dashed #ddd;
+}
+
+.meme {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto 1rem;
+}
+
+.memeText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.memeText h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.memeText p {
+  color: white;
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wheelContainer {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .emotionName {
+    font-size: 10px;
+  }
+  
+  .emotionDisplay {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .emotionInfo {
+    text-align: center;
+  }
+  
+  .resultCard h2 {
+    font-size: 1.5rem;
+  }
+}
